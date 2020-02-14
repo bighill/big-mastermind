@@ -1,0 +1,123 @@
+$color-0: black;
+$color-1: white;
+
+$color-peg-1: green;
+$color-peg-2: blue;
+$color-peg-3: orange;
+$color-peg-4: purple;
+$color-peg-5: skyblue;
+$color-peg-6: red;
+
+$peg-size: 3em;
+$pin-size: 1em;
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-0;
+  color: $color-1;
+}
+
+#meat {
+  display: flex;
+  max-width: 666px;
+}
+
+#board {
+  border: 1px solid $color-1;
+  width: 100%;
+  margin: 1em;
+}
+
+.attempt {
+  display: flex;
+
+  .guess {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .result {
+    .result-row {
+      display: flex;
+    }
+  }
+
+  > div {
+    border: 1px solid $color-1;
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+}
+
+.peg {
+  width: $peg-size;
+  height: $peg-size;
+  margin: 1em;
+  border-radius: 50%;
+
+  &.selected {
+    border: 3px solid $color-1;
+  }
+}
+
+.peg-0 {
+  border: 1px solid $color-1;
+}
+
+.peg-1 {
+  background-color: $color-peg-1;
+}
+
+.peg-2 {
+  background-color: $color-peg-2;
+}
+
+.peg-3 {
+  background-color: $color-peg-3;
+}
+
+.peg-4 {
+  background-color: $color-peg-4;
+}
+
+.peg-5 {
+  background-color: $color-peg-5;
+}
+
+.peg-6 {
+  background-color: $color-peg-6;
+}
+
+.pin {
+  width: $pin-size;
+  height: $pin-size;
+  margin: 0.5em;
+  border-radius: 50%;
+}
+
+.pin-hole {
+  border: 1px solid $color-1;
+}
+
+.pin-black {
+  background-color: black;
+}
+
+.pin-white {
+  background-color: white;
+}
