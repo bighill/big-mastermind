@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { AttemptContext } from "../../context/attempt-context"
-import Peg from "../peg"
+import Peg from "../peg/peg"
 
 export default () => {
   const AttemptState = useContext(AttemptContext)

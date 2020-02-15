@@ -1,0 +1,11 @@
+@import "../../style/vars";
+
+.attempt {
+  display: flex;
+
+  > div {
+    border: 1px solid $color-1;
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+}

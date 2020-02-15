@@ -1,0 +1,40 @@
+@import "../../style/vars";
+
+.peg {
+  width: $peg-size;
+  height: $peg-size;
+  margin: 1em;
+  border-radius: 50%;
+
+  &.selected {
+    border: 3px solid $color-1;
+  }
+}
+
+.peg_0 {
+  border: 1px solid $color-1;
+}
+
+.peg_1 {
+  background-color: $color-peg-1;
+}
+
+.peg_2 {
+  background-color: $color-peg-2;
+}
+
+.peg_3 {
+  background-color: $color-peg-3;
+}
+
+.peg_4 {
+  background-color: $color-peg-4;
+}
+
+.peg_5 {
+  background-color: $color-peg-5;
+}
+
+.peg_6 {
+  background-color: $color-peg-6;
+}
