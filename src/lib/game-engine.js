@@ -37,7 +37,7 @@ export const Proc = (answer, guess) => {
     return curr.color_i !== answer[i].color_i ? acc + 1 : acc
   }, 0)
 
-  return { correctColor_CorrectPlacement, correctColor_WrongPlacement }
+  return [correctColor_CorrectPlacement, correctColor_WrongPlacement]
 }
 
 const _guessNotReady = guess => guess.find(g => g.color_i === 0)

@@ -12,10 +12,25 @@ export default props => {
 
   const procGuess = (_attemptState, _attempt_i) => {
     const answer = [..._attemptState.answer]
-    const guess = [..._attemptState.attempts[_attempt_i].guessPegs]
+    const attempts = [..._attemptState.attempts]
+    const guess = [...attempts[_attempt_i].guessPegs]
+
+    // process
     const result = Proc(answer, guess)
-    console.log("procGuess() result", result)
-    // AttemptState.setAttempts(result)
+    if (!result) {
+      return
+    }
+
+    const [correctColor_CorrectPlacement, correctColor_WrongPlacement] = result
+
+    attempts[_attempt_i].result = {
+      correctColor_CorrectPlacement: correctColor_CorrectPlacement,
+      correctColor_WrongPlacement: correctColor_WrongPlacement,
+      isProcessed: true,
+    }
+
+    _attemptState.setAttempts(attempts)
+    console.log(_attemptState.attempts)
   }
 
   const insertPeg = (attempt_i, guessPeg_i) => {

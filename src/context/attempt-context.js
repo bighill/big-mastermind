@@ -24,8 +24,11 @@ const AttemptProvider = props => {
         i: i,
         enabled: false,
         guessPegs: defaultGuess(i),
-        correctColor_CorrectPlacement: 0,
-        correctColor_WrongPlacement: 0,
+        result: {
+          isProcessed: false,
+          correctColor_CorrectPlacement: 0,
+          correctColor_WrongPlacement: 0,
+        },
       })
     }
     attempts[0].enabled = true
