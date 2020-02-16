@@ -8,7 +8,15 @@ export default () => {
   return (
     <div id="answer" style={{ display: "flex", marginLeft: "10em" }}>
       {AttemptState.answer.map(p => (
-        <Peg key={p.i} peg={p} available={false} />
+        <Peg
+          key={p.i}
+          i={p.i}
+          color_i={p.color_i}
+          attempt={null}
+          selected={false}
+          enabled={false}
+          onClick={null}
+        />
       ))}
     </div>
   )

@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { PegContext } from "../../context/peg-context"
-import Peg from "./peg"
+import Peg from "../peg/peg"
 
 const colorsAvailablePerGuess = 6
 

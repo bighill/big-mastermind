@@ -6,7 +6,7 @@ import { AttemptProvider } from "../context/attempt-context"
 
 import Answer from "../components/answer/answer"
 import Board from "../components/board/board"
-import AvailablePegs from "../components/peg/available-pegs"
+import AvailablePegs from "../components/available/available-pegs"
 
 export default () => (
   <PegProvider>

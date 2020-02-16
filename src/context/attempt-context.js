@@ -27,14 +27,16 @@ const AttemptProvider = props => {
   }
 
   const [attempts, setAttempts] = useState(defaultAttempts)
+  const [answer, setAnswer] = useState(Engine.answer())
 
   const App = {
     attempts: attempts,
     setAttempts: setAttempts,
-    answer: Engine.answer(),
+    answer: answer,
+    setAnswer: setAnswer,
   }
 
-  window.attempts = attempts
+  window.__attempts = attempts
 
   return (
     <AttemptContext.Provider value={App}>
