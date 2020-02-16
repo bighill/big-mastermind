@@ -3,14 +3,19 @@ import style from "./guess.module.scss"
 
 import { PegContext } from "../../context/peg-context"
 import { AttemptContext } from "../../context/attempt-context"
+import { Proc } from "../../lib/game-engine"
 import Peg from "../peg/peg"
 
 export default props => {
   const PegState = useContext(PegContext)
   const AttemptState = useContext(AttemptContext)
 
-  const procGuess = () => {
-    console.log("procGuess()")
+  const procGuess = (_attemptState, _attempt_i) => {
+    const answer = [..._attemptState.answer]
+    const guess = [..._attemptState.attempts[_attempt_i].guessPegs]
+    const result = Proc(answer, guess)
+    console.log("procGuess() result", result)
+    // AttemptState.setAttempts(result)
   }
 
   const insertPeg = (attempt_i, guessPeg_i) => {
@@ -41,7 +46,7 @@ export default props => {
       removePeg(attempt_i, guessPeg_i)
     } else {
       insertPeg(attempt_i, guessPeg_i)
-      procGuess()
+      procGuess({ ...AttemptState }, attempt_i)
     }
   }
 
@@ -60,7 +65,6 @@ export default props => {
 
   return (
     <div className={`${style.guess} ${props.enabled && style.enabled}`}>
-      {console.log(props)}
       {guess()}
     </div>
   )

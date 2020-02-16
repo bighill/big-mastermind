@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Engine from "../lib/game-engine"
+import { Answer } from "../lib/game-engine"
 
 const AttemptContext = React.createContext([{}, () => {}])
 
@@ -20,14 +20,20 @@ const AttemptProvider = props => {
   const defaultAttempts = () => {
     let attempts = []
     for (let i = 0; i < num.attempts; i++) {
-      attempts.push({ i: i, guessPegs: defaultGuess(i), enabled: false })
+      attempts.push({
+        i: i,
+        enabled: false,
+        guessPegs: defaultGuess(i),
+        correctColor_CorrectPlacement: 0,
+        correctColor_WrongPlacement: 0,
+      })
     }
     attempts[0].enabled = true
     return attempts
   }
 
   const [attempts, setAttempts] = useState(defaultAttempts)
-  const [answer, setAnswer] = useState(Engine.answer())
+  const [answer, setAnswer] = useState(Answer())
 
   const App = {
     attempts: attempts,
