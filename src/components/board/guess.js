@@ -24,13 +24,13 @@ export default props => {
     const [correctColor_CorrectPlacement, correctColor_WrongPlacement] = result
 
     attempts[_attempt_i].result = {
+      isProcessed: true,
       correctColor_CorrectPlacement: correctColor_CorrectPlacement,
       correctColor_WrongPlacement: correctColor_WrongPlacement,
-      isProcessed: true,
     }
 
     _attemptState.setAttempts(attempts)
-    console.log(_attemptState.attempts)
+    // console.log(_attemptState.attempts)
   }
 
   const insertPeg = (attempt_i, guessPeg_i) => {

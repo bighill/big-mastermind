@@ -11,7 +11,7 @@ export default props => {
         enabled={props.attempt.enabled}
         guessPegs={props.attempt.guessPegs}
       />
-      <Result />
+      <Result attempt_i={props.attempt.i} />
     </div>
   )
 }
