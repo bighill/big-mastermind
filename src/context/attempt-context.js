@@ -1,45 +1,46 @@
-import React, { useState } from "react";
-import Engine from "../lib/game-engine";
+import React, { useState } from "react"
+import Engine from "../lib/game-engine"
 
-const AttemptContext = React.createContext([{}, () => {}]);
+const AttemptContext = React.createContext([{}, () => {}])
 
 const num = {
   attempts: 4,
-  pegsPerGuess: 4
-};
+  pegsPerGuess: 4,
+}
 
 const AttemptProvider = props => {
-  const defaultGuess = function(attemptI) {
-    // one guess is several pegs
-    let result = [];
+  const defaultGuess = function(attempt_i) {
+    let guessPegs = []
     for (let i = 0; i < num.pegsPerGuess; i++) {
-      result.push({ i: i, id: `${attemptI}_${i}`, color_i: 0 });
+      guessPegs.push({ i: i, attempt_i: attempt_i, color_i: 0 })
     }
-    return result;
-  };
+    return guessPegs
+  }
 
   const defaultAttempts = () => {
-    let result = [];
+    let attempts = []
     for (let i = 0; i < num.attempts; i++) {
-      result.push({ i: i, guess: defaultGuess(i), state: "disabled" });
+      attempts.push({ i: i, guessPegs: defaultGuess(i), state: "disabled" })
     }
-    result[0].state = "ready";
-    return result;
-  };
+    attempts[0].state = "ready"
+    return attempts
+  }
 
-  const [attempts, setAttempts] = useState(defaultAttempts);
+  const [attempts, setAttempts] = useState(defaultAttempts)
 
   const App = {
     attempts: attempts,
     setAttempts: setAttempts,
-    answer: Engine.answer()
-  };
+    answer: Engine.answer(),
+  }
+
+  window.attempts = attempts
 
   return (
     <AttemptContext.Provider value={App}>
       {props.children}
     </AttemptContext.Provider>
-  );
-};
+  )
+}
 
-export { AttemptContext, AttemptProvider };
+export { AttemptContext, AttemptProvider }
