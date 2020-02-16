@@ -7,7 +7,10 @@ import Result from "./result"
 export default props => {
   return (
     <div className={style.attempt}>
-      <Guess guessPegs={props.attempt.guessPegs} />
+      <Guess
+        enabled={props.attempt.enabled}
+        guessPegs={props.attempt.guessPegs}
+      />
       <Result />
     </div>
   )

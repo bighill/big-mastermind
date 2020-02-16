@@ -1,5 +1,6 @@
 $color-0: black;
-$color-1: white;
+$color-1: grey;
+$color-2: white;
 
 $color-peg-1: green;
 $color-peg-2: blue;
@@ -8,5 +9,7 @@ $color-peg-4: purple;
 $color-peg-5: skyblue;
 $color-peg-6: red;
 
-$peg-size: 3em;
-$pin-size: 1em;
+$unit: 0.5em;
+
+$peg-size: $unit * 6;
+$pin-size: $unit * 2;

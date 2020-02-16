@@ -26,13 +26,16 @@ export default props => {
   }
 
   const handlePegClick = ev => {
-    const guessPegColor_i = Number(ev.target.dataset.color_i)
-    const attempt_i = ev.target.dataset.attempt_i
-    const guessPeg_i = ev.target.dataset.i
-
     if (typeof PegState.selected !== "number") {
       return
     }
+    if (!props.enabled) {
+      return
+    }
+
+    const guessPegColor_i = Number(ev.target.dataset.color_i)
+    const attempt_i = ev.target.dataset.attempt_i
+    const guessPeg_i = ev.target.dataset.i
 
     if (guessPegColor_i > 0) {
       removePeg(attempt_i, guessPeg_i)
@@ -50,9 +53,15 @@ export default props => {
         color_i={p.color_i}
         attempt_i={p.attempt_i}
         selected={false}
+        enabled={props.enabled}
         onClick={handlePegClick}
       />
     ))
 
-  return <div className={style.guess}>{guess()}</div>
+  return (
+    <div className={`${style.guess} ${props.enabled && style.enabled}`}>
+      {console.log(props)}
+      {guess()}
+    </div>
+  )
 }

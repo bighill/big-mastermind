@@ -20,9 +20,9 @@ const AttemptProvider = props => {
   const defaultAttempts = () => {
     let attempts = []
     for (let i = 0; i < num.attempts; i++) {
-      attempts.push({ i: i, guessPegs: defaultGuess(i), state: "disabled" })
+      attempts.push({ i: i, guessPegs: defaultGuess(i), enabled: false })
     }
-    attempts[0].state = "ready"
+    attempts[0].enabled = true
     return attempts
   }
 

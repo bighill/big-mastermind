@@ -5,14 +5,19 @@
   height: $peg-size;
   margin: 1em;
   border-radius: 50%;
+  outline: none;
+}
 
-  &.selected {
-    border: 3px solid $color-1;
-  }
+.selected {
+  border: 3px solid $color-2;
 }
 
 .peg_0 {
   border: 1px solid $color-1;
+
+  &.enabled {
+    border: 1px solid $color-2;
+  }
 }
 
 .peg_1 {

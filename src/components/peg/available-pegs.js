@@ -22,6 +22,7 @@ export default props => {
           color_i={i}
           attempt={null}
           selected={PegState.selected === i}
+          enabled={false}
           onClick={handlePegClick}
         />
       )

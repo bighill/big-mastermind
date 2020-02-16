@@ -8,6 +8,7 @@ export default props => {
     ${style.peg}
     ${style["peg_" + props.color_i]}
     ${props.selected && style.selected}
+    ${props.enabled && style.enabled}
   `
 
   return (
