@@ -42,7 +42,7 @@ export default props => {
     const attempt_i = ev.target.dataset.attempt_i
     const guessPeg_i = ev.target.dataset.i
 
-    if (guessPegColor_i > 0) {
+    if (guessPegColor_i > 0 && guessPegColor_i === PegState.selected) {
       removePeg(attempt_i, guessPeg_i)
     } else {
       insertPeg(attempt_i, guessPeg_i)
