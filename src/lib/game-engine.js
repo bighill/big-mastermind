@@ -16,6 +16,10 @@ export const Answer = function(allowRepeatsColors) {
 }
 
 export const Proc = (answer, guess) => {
+  if (_guessNotReady(guess)) {
+    return null
+  }
+
   const answer__color_i__arr = answer.map(a => a.color_i)
 
   const correctColor_CorrectPlacement = guess.reduce((acc, curr, i) => {
@@ -35,6 +39,8 @@ export const Proc = (answer, guess) => {
 
   return { correctColor_CorrectPlacement, correctColor_WrongPlacement }
 }
+
+const _guessNotReady = guess => guess.find(g => g.color_i === 0)
 
 const _randomFromArray = arr => {
   const r = _randomNumber(0, arr.length)
