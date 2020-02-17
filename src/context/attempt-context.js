@@ -4,7 +4,7 @@ import { Answer } from "../lib/game-engine"
 const AttemptContext = React.createContext([{}, () => {}])
 
 const num = {
-  attemptsPerGame: 2,
+  attemptsPerGame: 10,
   pegsPerGuess: 4,
 }
 

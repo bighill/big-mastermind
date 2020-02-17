@@ -6,11 +6,14 @@
   display: flex;
   justify-content: space-evenly;
 
-  border: 1px solid $color-1;
-  margin: $unit;
+  background: lighten($color-0, 8%);
+
+  margin-top: $unit;
   padding: $unit;
+
+  border-radius: $unit;
 }
 
 .enabled {
-  border: 1px solid $color-2;
+  background: $color-1;
 }

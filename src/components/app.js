@@ -11,7 +11,7 @@ export default () => {
 
   return (
     <div id="app">
-      <Answer />
+      {/* <Answer /> */}
 
       {AttemptState.gameOver === "" && (
         <div id="meat">

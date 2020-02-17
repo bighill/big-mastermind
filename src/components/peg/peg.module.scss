@@ -3,7 +3,7 @@
 .peg {
   width: $peg-size;
   height: $peg-size;
-  margin: 1em;
+  margin: $unit;
   border-radius: 50%;
   outline: none;
 }
@@ -16,8 +16,8 @@
   background-color: $color-1;
 
   &.enabled {
-    background-color: transparent;
-    border: 1px solid $color-2;
+    background-color: $color-0;
+    border: 3px solid lighten($color-1, 5%);
   }
 }
 
