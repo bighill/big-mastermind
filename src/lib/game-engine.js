@@ -77,14 +77,26 @@ const _analyzeGuess = (guess, answer) => {
   const answer__color_i__arr = answer.map(a => a.color_i)
 
   const correctColor_CorrectPlacement = guess.reduce((acc, curr, i) => {
-    return curr.color_i === answer__color_i__arr[i] ? acc + 1 : acc
+    // count if current color is matches color and placement of answer
+    const hit = curr.color_i === answer__color_i__arr[i]
+    if (hit) {
+      // if counted, increment hit count
+      acc = acc + 1
+      // if counted, nullify that answer color in array so that it doesn't get counted again
+      answer__color_i__arr.splice(i, 1, null)
+    }
+    return acc
   }, 0)
 
-  const correctColor_WrongPlacement = guess.reduce((acc, curr, i) => {
-    if (answer__color_i__arr.indexOf(curr.color_i) < 0) {
-      return acc
+  const correctColor_WrongPlacement = guess.reduce((acc, curr) => {
+    const answerMatch_i = answer__color_i__arr.indexOf(curr.color_i)
+    if (answerMatch_i >= 0) {
+      // count if the current color is in the answer
+      acc = acc + 1
+      // nullify this answer color in array so that it doesn't get counted again
+      answer__color_i__arr.splice(answerMatch_i, 1, null)
     }
-    return curr.color_i !== answer[i].color_i ? acc + 1 : acc
+    return acc
   }, 0)
 
   return [correctColor_CorrectPlacement, correctColor_WrongPlacement]
