@@ -35,14 +35,24 @@ const AttemptProvider = props => {
     return attempts
   }
 
-  const [attempts, setAttempts] = useState(defaultAttempts)
+  const reset = () => {
+    setAnswer(Answer())
+    setGameOver("")
+    setAttempts(defaultAttempts())
+  }
+
+  const [attempts, setAttempts] = useState(defaultAttempts())
   const [answer, setAnswer] = useState(Answer())
+  const [gameOver, setGameOver] = useState("")
 
   const App = {
     attempts: attempts,
     setAttempts: setAttempts,
     answer: answer,
     setAnswer: setAnswer,
+    gameOver: gameOver,
+    setGameOver: setGameOver,
+    reset: reset,
   }
 
   window.__attempts = attempts

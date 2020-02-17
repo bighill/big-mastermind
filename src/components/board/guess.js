@@ -11,15 +11,13 @@ export default props => {
   const AttemptState = useContext(AttemptContext)
 
   const procGuess = async (_attemptState, _attempt_i) => {
-    const answer = [..._attemptState.answer]
-    const attempts = [..._attemptState.attempts]
-
-    const attemptsResult = await Proc(answer, attempts, _attempt_i)
+    const [attemptsResult, gameOver] = await Proc(_attemptState, _attempt_i)
     if (!attemptsResult) {
       return
     }
 
     _attemptState.setAttempts(attemptsResult)
+    _attemptState.setGameOver(gameOver)
   }
 
   const insertPeg = (attempt_i, guessPeg_i) => {

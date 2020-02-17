@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
-import { AttemptContext } from "../../context/attempt-context";
-import Attempt from "./attempt";
+import React, { useContext } from "react"
+import { AttemptContext } from "../../context/attempt-context"
+
+import Attempt from "./attempt"
 
 export default props => {
-  const AttemptState = useContext(AttemptContext);
+  const AttemptState = useContext(AttemptContext)
 
   return (
     <div id="board">
@@ -11,5 +12,5 @@ export default props => {
         <Attempt key={a.i} attempt={a} />
       ))}
     </div>
-  );
-};
+  )
+}

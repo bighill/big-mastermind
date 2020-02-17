@@ -32,9 +32,12 @@ const _randomNumber = function(min, max) {
 //
 //  Proc
 //
-export const Proc = (answer, attempts, attempt_i) =>
+export const Proc = (attemptState, attempt_i) =>
   new Promise(resolve => {
+    const answer = [...attemptState.answer]
+    let attempts = [...attemptState.attempts]
     const guess = attempts[attempt_i].guessPegs
+    let gameOver = ""
 
     if (_guessNotReady(guess)) {
       return null
@@ -51,14 +54,21 @@ export const Proc = (answer, attempts, attempt_i) =>
       correctColor_WrongPlacement: correctColor_WrongPlacement,
     }
 
-    if (attempt_i + 1 >= attempts.length) {
-      // game is over
+    if (correctColor_CorrectPlacement === 4) {
+      // win
+      gameOver = "win"
+      attempts = _noMoreAttempts([...attempts], attempt_i)
+    } else if (attempt_i + 1 >= attempts.length) {
+      // lose
+      gameOver = "lose"
       attempts = _noMoreAttempts([...attempts], attempt_i)
     } else {
+      // keep playing
+      gameOver = ""
       attempts = _advanceToNextAttempt([...attempts], attempt_i)
     }
 
-    resolve(attempts)
+    resolve([attempts, gameOver])
   })
 
 const _guessNotReady = guess => guess.find(g => g.color_i === 0)
