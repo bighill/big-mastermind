@@ -1,0 +1,10 @@
+@import "../../style/vars";
+
+.available_pegs_wrap {
+  width: $peg-size + ($unit * 3);
+}
+
+.available_pegs {
+  position: fixed;
+  top: inherit;
+}

@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import style from "./available-pegs.module.scss"
 import { PegContext } from "../../context/peg-context"
 import Peg from "../peg/peg"
 
@@ -30,5 +31,9 @@ export default props => {
     return availablePegs
   }
 
-  return <div id="available-pegs">{available()}</div>
+  return (
+    <div className={style.available_pegs_wrap}>
+      <div className={style.available_pegs}>{available()}</div>
+    </div>
+  )
 }
