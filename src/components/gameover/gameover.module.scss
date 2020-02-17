@@ -19,3 +19,10 @@
   margin: 0 auto;
   padding: $unit * 5;
 }
+
+.btn {
+  display: inline-block;
+  background: $color-2;
+  color: $color-0;
+  padding: $unit;
+}

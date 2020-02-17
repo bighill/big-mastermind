@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 
 import { AttemptContext } from "../context/attempt-context"
-import Answer from "./answer/answer"
+// import Answer from "./answer/answer"
 import Board from "./board/board"
 import AvailablePegs from "./available/available-pegs"
 import GameOver from "./gameover/gameover"

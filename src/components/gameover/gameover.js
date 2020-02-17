@@ -6,7 +6,7 @@ import { AttemptContext } from "../../context/attempt-context"
 export default props => {
   const AttemptState = useContext(AttemptContext)
 
-  const message = props.win_lose === "win" ? "You won!" : "You lose :("
+  const message = props.win_lose === "win" ? "You won !" : "You lose :("
 
   const handleBtnClick = ev => {
     ev.preventDefault()
@@ -17,7 +17,15 @@ export default props => {
     <div className={style.game_over}>
       <div className={style.content}>
         <h1>{message}</h1>
-        <button onClick={handleBtnClick}>Play Again</button>
+        <div
+          className={style.btn}
+          onClick={handleBtnClick}
+          onKeyUp={handleBtnClick}
+          role="button"
+          tabIndex="0"
+        >
+          Play Again
+        </div>
       </div>
     </div>
   )
