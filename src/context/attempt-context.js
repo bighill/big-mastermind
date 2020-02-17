@@ -4,7 +4,7 @@ import { Answer } from "../lib/game-engine"
 const AttemptContext = React.createContext([{}, () => {}])
 
 const num = {
-  attempts: 4,
+  attemptsPerGame: 2,
   pegsPerGuess: 4,
 }
 
@@ -19,7 +19,7 @@ const AttemptProvider = props => {
 
   const defaultAttempts = () => {
     let attempts = []
-    for (let i = 0; i < num.attempts; i++) {
+    for (let i = 0; i < num.attemptsPerGame; i++) {
       attempts.push({
         i: i,
         enabled: false,

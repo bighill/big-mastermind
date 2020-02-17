@@ -10,27 +10,16 @@ export default props => {
   const PegState = useContext(PegContext)
   const AttemptState = useContext(AttemptContext)
 
-  const procGuess = (_attemptState, _attempt_i) => {
+  const procGuess = async (_attemptState, _attempt_i) => {
     const answer = [..._attemptState.answer]
     const attempts = [..._attemptState.attempts]
-    const guess = [...attempts[_attempt_i].guessPegs]
 
-    // process
-    const result = Proc(answer, guess)
-    if (!result) {
+    const attemptsResult = await Proc(answer, attempts, _attempt_i)
+    if (!attemptsResult) {
       return
     }
 
-    const [correctColor_CorrectPlacement, correctColor_WrongPlacement] = result
-
-    attempts[_attempt_i].result = {
-      isProcessed: true,
-      correctColor_CorrectPlacement: correctColor_CorrectPlacement,
-      correctColor_WrongPlacement: correctColor_WrongPlacement,
-    }
-
-    _attemptState.setAttempts(attempts)
-    // console.log(_attemptState.attempts)
+    _attemptState.setAttempts(attemptsResult)
   }
 
   const insertPeg = (attempt_i, guessPeg_i) => {
@@ -54,8 +43,8 @@ export default props => {
     }
 
     const guessPegColor_i = Number(ev.target.dataset.color_i)
-    const attempt_i = ev.target.dataset.attempt_i
-    const guessPeg_i = ev.target.dataset.i
+    const attempt_i = Number(ev.target.dataset.attempt_i)
+    const guessPeg_i = Number(ev.target.dataset.i)
 
     if (guessPegColor_i > 0 && guessPegColor_i === PegState.selected) {
       removePeg(attempt_i, guessPeg_i)
