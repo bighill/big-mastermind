@@ -1,4 +1,6 @@
 import React, { useContext } from "react"
+import style from "./answer.module.scss"
+
 import { AttemptContext } from "../../context/attempt-context"
 import Peg from "../peg/peg"
 
@@ -6,7 +8,7 @@ export default () => {
   const AttemptState = useContext(AttemptContext)
 
   return (
-    <div id="answer" style={{ display: "flex", marginLeft: "10em" }}>
+    <div className={style.answer}>
       {AttemptState.answer.map(p => (
         <Peg
           key={p.i}
