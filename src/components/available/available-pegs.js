@@ -12,6 +12,10 @@ export default props => {
     PegState.setSelected(Number(ev.target.dataset.color_i))
   }
 
+  const handleInfoClick = ev => {
+    console.log("handleInfoClick")
+  }
+
   const available = () => {
     let availablePegs = []
     for (let i = 1; i < colorsAvailablePerGuess + 1; i++) {
@@ -21,9 +25,9 @@ export default props => {
           key={i}
           i={i}
           color_i={i}
-          attempt={null}
+          attempt=""
           selected={PegState.selected === i}
-          enabled={false}
+          enabled=""
           onClick={handlePegClick}
         />
       )
@@ -31,9 +35,26 @@ export default props => {
     return availablePegs
   }
 
+  const info = () => (
+    <Peg
+      i={null}
+      color_i={0}
+      attempt={null}
+      selected=""
+      enabled=""
+      onClick={handleInfoClick}
+      className={style.info}
+    >
+      i
+    </Peg>
+  )
+
   return (
     <div className={style.available_pegs_wrap}>
-      <div className={style.available_pegs}>{available()}</div>
+      <div className={style.available_pegs}>
+        {available()}
+        <div className={style.info}>{info()}</div>
+      </div>
     </div>
   )
 }

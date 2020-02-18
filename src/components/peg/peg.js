@@ -21,6 +21,8 @@ export default props => {
       onKeyUp={handleKeyUp}
       role="button"
       tabIndex={props.i}
-    ></div>
+    >
+      {props.children}
+    </div>
   )
 }
