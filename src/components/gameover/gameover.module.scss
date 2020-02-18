@@ -24,5 +24,6 @@
   display: inline-block;
   background: $color-2;
   color: $color-0;
-  padding: $unit;
+  padding: $unit * 2;
+  font-weight: bold;
 }

@@ -4,6 +4,7 @@
   margin: $unit / 2;
   border-radius: 50%;
   outline: none;
+  cursor: pointer;
   width: $peg-size;
   height: $peg-size;
 
@@ -11,10 +12,14 @@
     width: $peg-size-small;
     height: $peg-size-small;
   }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .selected {
-  border: 3px solid $color-2;
+  border: 3px solid $color-3;
 }
 
 .peg_0 {

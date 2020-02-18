@@ -1,6 +1,7 @@
 $color-0: black;
 $color-1: lighten($color-0, 15%);
-$color-2: white;
+$color-2: lighten($color-0, 80%);
+$color-3: white;
 
 $color-peg-1: green;
 $color-peg-2: blue;

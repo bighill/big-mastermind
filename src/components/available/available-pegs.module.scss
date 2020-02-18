@@ -8,3 +8,12 @@
   position: fixed;
   top: inherit;
 }
+
+.info {
+  margin-top: $peg-size;
+
+  div {
+    border: 3px solid lighten($color-1, 5%);
+    font-family: "Courier New", Courier, monospace;
+  }
+}
