@@ -3,7 +3,7 @@
 .pin {
   width: $pin-size;
   height: $pin-size;
-  margin: 0.5em;
+  margin: 0 $unit/2;
   border-radius: 50%;
 }
 

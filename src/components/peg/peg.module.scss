@@ -1,11 +1,16 @@
 @import "../../style/vars";
 
 .peg {
-  width: $peg-size;
-  height: $peg-size;
-  margin: $unit;
+  margin: $unit / 2;
   border-radius: 50%;
   outline: none;
+  width: $peg-size;
+  height: $peg-size;
+
+  @media (max-width: 350px) {
+    width: $peg-size-small;
+    height: $peg-size-small;
+  }
 }
 
 .selected {

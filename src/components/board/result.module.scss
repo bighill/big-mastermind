@@ -1,6 +1,7 @@
+@import "../../style/vars";
+
 .result {
   display: flex;
-  // flex-direction: column;
   align-items: center;
 }
 
@@ -11,4 +12,5 @@
 
 .result_row {
   display: flex;
+  margin: $unit/2 0;
 }
