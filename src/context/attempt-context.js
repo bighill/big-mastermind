@@ -55,8 +55,6 @@ const AttemptProvider = props => {
     reset: reset,
   }
 
-  window.__attempts = attempts
-
   return (
     <AttemptContext.Provider value={App}>
       {props.children}

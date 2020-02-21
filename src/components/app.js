@@ -10,6 +10,9 @@ export default () => {
   const AttemptState = useContext(AttemptContext)
 
   const showAnswer = () => {
+    if (typeof window === "undefined") {
+      return
+    }
     const url = new URL(window.location.href)
     return url.searchParams.get("cheat") && <Answer />
   }
