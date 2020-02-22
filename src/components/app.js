@@ -4,7 +4,8 @@ import { AttemptContext } from "../context/attempt-context"
 import Answer from "./answer/answer"
 import Board from "./board/board"
 import AvailablePegs from "./available/available-pegs"
-import GameOver from "./gameover/gameover"
+import Intro from "./modals/intro"
+import GameOver from "./modals/gameover"
 
 export default () => {
   const AttemptState = useContext(AttemptContext)
@@ -21,14 +22,16 @@ export default () => {
     <div id="app">
       {showAnswer()}
 
-      {AttemptState.gameOver === "" && (
+      {AttemptState.view === "play" && (
         <div id="meat">
           <AvailablePegs />
           <Board />
         </div>
       )}
 
-      {AttemptState.gameOver && <GameOver win_lose={AttemptState.gameOver} />}
+      {AttemptState.view === "intro" && <Intro />}
+      {AttemptState.view === "win" && <GameOver win_lose="win" />}
+      {AttemptState.view === "lose" && <GameOver win_lose="lose" />}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { Answer } from "../lib/game-engine"
 const AttemptContext = React.createContext([{}, () => {}])
 
 const num = {
-  attemptsPerGame: 12, // typically 8-12
+  attemptsPerGame: 2, // typically 8-12
   pegsPerGuess: 4,
 }
 
@@ -37,21 +37,21 @@ const AttemptProvider = props => {
 
   const reset = () => {
     setAnswer(Answer())
-    setGameOver("")
+    setView("play")
     setAttempts(defaultAttempts())
   }
 
   const [attempts, setAttempts] = useState(defaultAttempts())
   const [answer, setAnswer] = useState(Answer())
-  const [gameOver, setGameOver] = useState("")
+  const [view, setView] = useState("intro")
 
   const App = {
     attempts: attempts,
     setAttempts: setAttempts,
     answer: answer,
     setAnswer: setAnswer,
-    gameOver: gameOver,
-    setGameOver: setGameOver,
+    view: view,
+    setView: setView,
     reset: reset,
   }
 

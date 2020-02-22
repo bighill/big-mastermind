@@ -1,6 +1,6 @@
 @import "../../style/vars";
 
-.game_over {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,12 +18,4 @@
   text-align: center;
   margin: 0 auto;
   padding: $unit * 5;
-}
-
-.btn {
-  display: inline-block;
-  background: $color-2;
-  color: $color-0;
-  padding: $unit * 2;
-  font-weight: bold;
 }

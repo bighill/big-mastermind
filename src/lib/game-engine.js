@@ -64,7 +64,7 @@ export const Proc = (attemptState, attempt_i) =>
       attempts = _noMoreAttempts([...attempts], attempt_i)
     } else {
       // keep playing
-      gameOver = ""
+      gameOver = "play"
       attempts = _advanceToNextAttempt([...attempts], attempt_i)
     }
 

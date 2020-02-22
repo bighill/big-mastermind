@@ -17,7 +17,7 @@ export default props => {
     }
 
     _attemptState.setAttempts(attemptsResult)
-    _attemptState.setGameOver(gameOver)
+    _attemptState.setView(gameOver)
   }
 
   const insertPeg = (attempt_i, guessPeg_i) => {

@@ -18,10 +18,20 @@ body {
   background-color: $color-0;
   color: $color-2;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1px;
 }
 
 #meat {
   display: flex;
   justify-content: center;
   min-width: 300px;
+}
+
+.btn {
+  display: inline-block;
+  background: $color-2;
+  color: $color-0;
+  padding: $unit * 2;
+  font-weight: bold;
+  cursor: pointer;
 }
