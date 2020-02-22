@@ -1,11 +1,14 @@
 import React, { useContext } from "react"
 import style from "./available-pegs.module.scss"
+
+import { AttemptContext } from "../../context/attempt-context"
 import { PegContext } from "../../context/peg-context"
 import Peg from "../peg/peg"
 
 const colorsAvailablePerGuess = 6
 
 export default props => {
+  const AttemptState = useContext(AttemptContext)
   const PegState = useContext(PegContext)
 
   const handlePegClick = ev => {
@@ -13,7 +16,7 @@ export default props => {
   }
 
   const handleInfoClick = ev => {
-    console.log("handleInfoClick")
+    AttemptState.setView("info")
   }
 
   const available = () => {

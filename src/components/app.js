@@ -5,6 +5,7 @@ import Answer from "./answer/answer"
 import Board from "./board/board"
 import AvailablePegs from "./available/available-pegs"
 import Intro from "./modals/intro"
+import Info from "./modals/info"
 import GameOver from "./modals/gameover"
 
 export default () => {
@@ -30,6 +31,7 @@ export default () => {
       )}
 
       {AttemptState.view === "intro" && <Intro />}
+      {AttemptState.view === "info" && <Info />}
       {AttemptState.view === "win" && <GameOver win_lose="win" />}
       {AttemptState.view === "lose" && <GameOver win_lose="lose" />}
     </div>
