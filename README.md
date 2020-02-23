@@ -2,6 +2,8 @@
 
 A webapp version of the board game mastermind.
 
+[Demo](https://bighill.github.io/big-mastermind/)
+
 ## Requirements
 
 [node](https://nodejs.dev) && [npm](https://www.npmjs.com/)
@@ -14,20 +16,24 @@ npm install -g gatsby-cli
 
 ## Usage
 
+### Dev
+
 ```bash
 # Development: hot reloading, linting, error checking, etc
 npm run dev
-
-# Production build (builds to /public)
-npm run build
-
-# Serve production build locally
-npm run serve
-
-# See package.json for all options
 ```
 
-When running locally in dev mode, you can add the query string `cheat` to display the answer; e.g. `http://localhost:8000/?cheat`.
+View page at [http://localhost:8000/](http://localhost:8000/).
+
+Also, when running locally in dev mode, you can add the query string `cheat` to display the answer; e.g. [http://localhost:8000/?cheat](http://localhost:8000/?cheat).
+
+### Deploy
+
+Currently, the public demo of this is deployed to GitHub Pages. The `gh-pages` package will build, put build in `gh-pages` repo, and push. Demo available at [https://bighill.github.io/big-mastermind/](https://bighill.github.io/big-mastermind/)
+
+```bash
+npm run deploy
+```
 
 ## Why
 
