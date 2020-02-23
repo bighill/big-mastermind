@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/big-mastermind",
   plugins: [
     `gatsby-plugin-sass`,
     {
