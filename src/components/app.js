@@ -13,10 +13,9 @@ export default () => {
 
   const showAnswer = () => {
     if (typeof window === "undefined") {
-      return
+      return null
     }
-    const url = new URL(window.location.href)
-    return url.searchParams.get("cheat") && <Answer />
+    return window.location.search === "?cheat" ? <Answer /> : null
   }
 
   return (

@@ -19,10 +19,15 @@ export default props => {
       <div className="content">
         <h1>Big Mastermind</h1>
         <p>A web app adaptation of the classic Mastermind board game.</p>
-        <p className="internallink" onClick={handleHowToPlayClick}>
-          How to Play
-        </p>
-        <h2
+        <div
+          onClick={handleHowToPlayClick}
+          onKeyUp={handleHowToPlayClick}
+          role="button"
+          tabIndex="0"
+        >
+          <p className="internallink">How to Play</p>
+        </div>
+        <div
           className="btn"
           onClick={handleBtnClick}
           onKeyUp={handleBtnClick}
@@ -30,7 +35,7 @@ export default props => {
           tabIndex="0"
         >
           Play
-        </h2>
+        </div>
       </div>
     </ModalLayout>
   )

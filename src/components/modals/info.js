@@ -15,23 +15,20 @@ export default props => {
       <div className="content">
         <h1>Info</h1>
         <p>
-          <em>Game play instructions coming soon</em>
+          <em>TODO: add game play instructions</em>
         </p>
-        <h2>How to Play Big Mastermind</h2>
-        <h3>Make a guess</h3>
-        <p>yada yada yada</p>
-        <h3>Scoring each guess</h3>
-        <p>yada yada yada</p>
-        <h3>More info about the original Mastermind board game</h3>
-        <div>
-          <a
-            href="https://en.wikipedia.org/wiki/Mastermind_(board_game)"
-            target="_blank"
-          >
-            Mastermind: Wikipedia
-          </a>
-        </div>
-        <h2
+        <p>
+          <em>TODO: add link to official rules</em>
+        </p>
+        <p>
+          <em>TODO: add link to open source code</em>
+        </p>
+        <p>
+          <em>
+            TODO: this view deserves a better layout, maybe its own page route
+          </em>
+        </p>
+        <div
           className="btn"
           onClick={handleBtnClick}
           onKeyUp={handleBtnClick}
@@ -39,7 +36,7 @@ export default props => {
           tabIndex="0"
         >
           Play
-        </h2>
+        </div>
       </div>
     </ModalLayout>
   )

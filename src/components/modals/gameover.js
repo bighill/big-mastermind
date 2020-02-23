@@ -16,7 +16,7 @@ export default props => {
   return (
     <ModalLayout>
       <h1>{message}</h1>
-      <h2
+      <div
         className="btn"
         onClick={handleBtnClick}
         onKeyUp={handleBtnClick}
@@ -24,7 +24,7 @@ export default props => {
         tabIndex="0"
       >
         Play Again
-      </h2>
+      </div>
     </ModalLayout>
   )
 }

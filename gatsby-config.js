@@ -13,8 +13,8 @@ module.exports = {
         name: "Big Mastermind",
         short_name: "Big Mastermind",
         start_url: "/",
-        background_color: "tomato",
-        theme_color: "skyblue",
+        background_color: "black",
+        theme_color: "black",
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
