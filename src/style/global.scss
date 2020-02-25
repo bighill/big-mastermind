@@ -32,11 +32,17 @@ body {
   cursor: pointer;
 }
 
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
   display: inline-block;
   background: $color-2;
   color: $color-0;
   padding: $unit * 2;
+  margin: $unit * 2;
   font-weight: bold;
   font-size: 1.3rem;
   letter-spacing: 2px;

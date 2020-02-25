@@ -27,14 +27,16 @@ export default props => {
         >
           <p className="internallink">How to Play</p>
         </div>
-        <div
-          className="btn"
-          onClick={handleBtnClick}
-          onKeyUp={handleBtnClick}
-          role="button"
-          tabIndex="0"
-        >
-          Play
+        <div className="btn-wrap">
+          <div
+            className="btn"
+            onClick={handleBtnClick}
+            onKeyUp={handleBtnClick}
+            role="button"
+            tabIndex="0"
+          >
+            Play
+          </div>
         </div>
       </div>
     </ModalLayout>

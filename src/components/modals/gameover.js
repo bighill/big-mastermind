@@ -16,14 +16,16 @@ export default props => {
   return (
     <ModalLayout>
       <h1>{message}</h1>
-      <div
-        className="btn"
-        onClick={handleBtnClick}
-        onKeyUp={handleBtnClick}
-        role="button"
-        tabIndex="0"
-      >
-        Play Again
+      <div className="btn-wrap">
+        <div
+          className="btn"
+          onClick={handleBtnClick}
+          onKeyUp={handleBtnClick}
+          role="button"
+          tabIndex="0"
+        >
+          Play Again
+        </div>
       </div>
     </ModalLayout>
   )

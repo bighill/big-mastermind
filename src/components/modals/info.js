@@ -28,14 +28,16 @@ export default props => {
             TODO: this view deserves a better layout, maybe its own page route
           </em>
         </p>
-        <div
-          className="btn"
-          onClick={handleBtnClick}
-          onKeyUp={handleBtnClick}
-          role="button"
-          tabIndex="0"
-        >
-          Play
+        <div className="btn-wrap">
+          <div
+            className="btn"
+            onClick={handleBtnClick}
+            onKeyUp={handleBtnClick}
+            role="button"
+            tabIndex="0"
+          >
+            Play
+          </div>
         </div>
       </div>
     </ModalLayout>
