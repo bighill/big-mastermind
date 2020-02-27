@@ -16,7 +16,7 @@ export default props => {
   }
 
   const handleInfoClick = ev => {
-    AttemptState.setView("info")
+    AttemptState.setView("how")
   }
 
   const available = () => {

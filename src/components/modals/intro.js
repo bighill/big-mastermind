@@ -7,7 +7,7 @@ export default props => {
   const AttemptState = useContext(AttemptContext)
 
   const handleHowToPlayClick = ev => {
-    AttemptState.setView("info")
+    AttemptState.setView("how")
   }
 
   const handleBtnClick = ev => {

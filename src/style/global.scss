@@ -21,6 +21,15 @@ body {
   letter-spacing: 1px;
 }
 
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: $color-2;
+  text-decoration: underline;
+}
+
 #meat {
   display: flex;
   justify-content: center;
