@@ -78,7 +78,16 @@ export default props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Wikipedia article
+            Mastermind Wikipedia article
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://github.com/bighill/big-mastermind"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Source code on GitHub
           </a>
         </p>
       </div>
