@@ -29,7 +29,7 @@ Also, when running locally in dev mode, you can add the query string `cheat` to 
 
 ### Deploy
 
-Currently, the public demo of this is deployed to GitHub Pages. The `gh-pages` package will build, put build in `gh-pages` repo, and push. Demo available at [https://bighill.github.io/big-mastermind/](https://bighill.github.io/big-mastermind/)
+Currently, the public demo of this is deployed to GitHub Pages. The `gh-pages` package will build, put build in `gh-pages` branch, and push. Source code remains in `master` branch, while only the build exists in `gh-pages` branch. GitHub pages hosts the demo by serving just the `gh-pages` branch... [https://bighill.github.io/big-mastermind/](https://bighill.github.io/big-mastermind/)
 
 ```bash
 npm run deploy
